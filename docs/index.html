@@ -1,0 +1,247 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Complex Content - Example</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fafafa">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            font-size: 16px;
+            position: relative;
+            border: none;
+            outline: none;
+        }
+
+        body{
+            background-color: #ffffff;
+            color: rgb(41,41,41);
+        }
+
+        body *{
+            display: inline-block;
+            line-height: 1.618;
+        }
+
+        main{
+            display: block;
+            margin: 64px auto;
+            width: 100vw;
+        }
+
+        complex-content{
+            width: calc(100% - 32px);
+            display: block;
+            position: relative;
+            padding: 16px;
+            border: 1px dashed royalblue;
+            margin: 16px;
+        }
+
+        complex-content::after{
+            content:"Complex Content";
+            display: inline-block;
+            background-color: #ffffff;
+            position: absolute;
+            top: -12px;
+            line-height: normal;
+            left: 8px;
+            font-size: 12px;
+            color: rgba(65, 105, 225, 0.87);
+            padding: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        section{
+            width: 100%;
+            display: block;
+            position: relative;
+            padding: 16px;
+            border: 1px dashed rgb(248, 72, 139);
+            margin-bottom: 16px;
+        }
+
+        section:last-of-type{
+            margin-bottom: 0;
+        }
+
+        section::after{
+            content:"Section";
+            display: inline-block;
+            background-color: #ffffff;
+            position: absolute;
+            top: -12px;
+            line-height: normal;
+            left: 8px;
+            font-size: 12px;
+            color: rgba(248, 72, 139, 0.87);
+            padding: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            position: relative;
+            padding: 16px;
+            border: 1px dashed rgb(248, 178, 72);
+        }
+
+        container.-two-column{
+            grid-template-columns: 1fr 1fr;
+            column-gap: 16px;
+        }
+
+        container.-three-column{
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 16px;
+        }
+
+        container::after{
+            content:"Container";
+            display: inline-block;
+            background-color: #ffffff;
+            position: absolute;
+            top: -12px;
+            line-height: normal;
+            left: 8px;
+            font-size: 12px;
+            color: rgba(248, 178, 72, 0.87);
+            padding: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        column{
+            width: 100%;
+            display: inline-flex;
+            flex-flow: column wrap;
+            padding: 16px;
+            border: 1px dashed rgb(85, 190, 71);
+        }
+
+        column.-vertical-center{
+            align-items: center;
+        }
+
+        column.-vertical-center block{
+            margin: auto;
+        }
+
+        column::after{
+            content:"Column";
+            display: inline-block;
+            background-color: #ffffff;
+            position: absolute;
+            top: -12px;
+            line-height: normal;
+            left: 8px;
+            font-size: 12px;
+            color: rgba(85, 190, 71, 0.87);
+            padding: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        block{
+            width: 100%;
+            padding: 16px;
+            border: 1px dashed rgb(127, 71, 190);
+            margin-bottom: 16px;
+        }
+
+        block:last-of-type{
+            margin-bottom: 0;
+        }
+
+        block::after{
+            content:"Block";
+            display: inline-block;
+            background-color: #ffffff;
+            position: absolute;
+            top: -12px;
+            line-height: normal;
+            left: 8px;
+            font-size: 12px;
+            color: rgba(127, 71, 190, 0.87);
+            padding: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        img{
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <complex-content>
+            <section>
+                <container class="-two-column">
+                    <column>
+                        <block>
+                            <h2>Column 1</h2>
+                        </block>
+                        <block>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </block>
+                    </column>
+                    <column>
+                        <block>
+                            <h2>Column 2</h2>
+                        </block>
+                        <block>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </block>
+                    </column>
+                </container>
+            </section>
+            <section>
+                <container class="-three-column">
+                    <column  class="-vertical-center">
+                        <block>
+                            <img src="https://images.unsplash.com/photo-1453227588063-bb302b62f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sad Doggo">
+                        </block>
+                    </column>
+                    <column>
+                        <block>
+                            <h2>Column 2</h2>
+                        </block>
+                        <block>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </block>
+                    </column>
+                    <column>
+                        <block>
+                            <h2>Column 2</h2>
+                        </block>
+                        <block>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </block>
+                    </column>
+                </container>
+            </section>
+        </complex-content>
+    </main>
+</body>
+
+</html>
