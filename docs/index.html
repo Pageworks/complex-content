@@ -220,22 +220,44 @@
             width: 100%;
             justify-content: center;
             align-items: center;
-            scroll-snap-type: mandatory;
-            flex-flow: row nowrap;
+            flex-flow: row wrap;
             padding: 16px;
+            border: 1px dashed rgb(48, 156, 228);
+        }
+
+        card-carousel::after{
+            content:"Component";
+            display: inline-block;
+            background-color: #ffffff;
+            position: absolute;
+            top: -12px;
+            line-height: normal;
+            left: 8px;
+            font-size: 12px;
+            color: rgba(48, 156, 228, 0.87);
+            padding: 4px;
+            letter-spacing: 0.5px;
         }
 
         card{
             width: 256px;
             height: 158px;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(41,41,41,0.1);
-            margin: 0 16px;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            background-color: aquamarine;
-            user-select: none;
+            margin: 0 8px;
+            border: 1px dashed rgb(95, 224, 181);
+        }
+
+        card::after{
+            content:"Object";
+            display: inline-block;
+            background-color: #ffffff;
+            position: absolute;
+            top: -12px;
+            line-height: normal;
+            left: 8px;
+            font-size: 12px;
+            color: rgba(95, 224, 181, 0.87);
+            padding: 4px;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -316,15 +338,9 @@
                             </block>
                             <block>
                                 <card-carousel>
-                                    <card>
-                                        <span>Component or Object</span>
-                                    </card>
-                                    <card>
-                                        <span>Component or Object</span>
-                                    </card>
-                                    <card>
-                                        <span>Component or Object</span>
-                                    </card>
+                                    <card></card>
+                                    <card></card>
+                                    <card></card>
                                 </card-carousel>
                             </block>
                         </column>
