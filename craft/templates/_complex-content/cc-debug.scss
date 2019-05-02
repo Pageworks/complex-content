@@ -45,7 +45,7 @@ complex-content{
         container{
             padding: 16px;
             border: 1px dashed rgb(248, 178, 72);
-            column-gap: 16px !important;
+            gap: 16px !important;
 
             &:not(:last-of-type){
                 margin-bottom: 16px;
@@ -68,10 +68,6 @@ complex-content{
             column{
                 padding: 16px;
                 border: 1px dashed rgb(85, 190, 71);
-
-                &:not(:last-of-type){
-                    margin-bottom: 16px;
-                }
 
                 &::after{
                     content:"Column";
