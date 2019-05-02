@@ -4,6 +4,7 @@ complex-content{
     margin: 16px;
     background-color: #ffffff !important;
     width: calc(100% - 32px);
+    overflow: visible;
 
     &::after{
         content:"Complex Content";

@@ -11,10 +11,10 @@
     {% set containerOpen = false %}
     {% set columnOpen = false %}
     
-    {# {% cache using key entry.slug ~ (craft['imager'] is defined and craft.imager.clientSupportsWebp() and craft.imager.serverSupportsWebp() ? '-with-webp')  %} #}
+    {% cache using key entry.slug ~ (craft['imager'] is defined and craft.imager.clientSupportsWebp() and craft.imager.serverSupportsWebp() ? '-with-webp')  %}
         <complex-content data-entry="{{ entry.cpEditUrl }}" data-template="complex-content">
         
-            {% for block in entry.cc %}
+            {% for block in entry.cc.all %}
                 {# Determine if we need to grab a utility block or a content block #}
                 {% if block.type == "sectionBlock" or block.type == "containerBlock" or block.type == "endColumnBlock" %}
                     {% switch block.type %}
@@ -97,5 +97,5 @@
             {% endfor %}
         
         </complex-content>
-    {# {% endcache %} #}
+    {% endcache %}
 {% endblock %}
