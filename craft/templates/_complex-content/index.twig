@@ -1,9 +1,9 @@
 {% extends "_layouts/base.twig" %}
 
+{% do view.registerCssFile(siteUrl|trim('/') ~ '/assets/styles/complex-content.' ~ craft.app.config.general.cssCacheBustTimestamp ~ '.css') %}
+
 {% if entry['debug'] is defined and entry['debug']|length %}
     {% do view.registerCssFile(siteUrl|trim('/') ~ '/assets/styles/cc-debug.' ~ craft.app.config.general.cssCacheBustTimestamp ~ '.css') %}
-{% else %}
-    {% do view.registerCssFile(siteUrl|trim('/') ~ '/assets/styles/complex-content.' ~ craft.app.config.general.cssCacheBustTimestamp ~ '.css') %}
 {% endif %}
 
 {% block content %}
@@ -74,7 +74,11 @@
                     {% endif %}
 
                     <block data-block-type="{{ block.type }}" data-block-id="{{ block.id }}" class="{{ (block.spacingType) ? block.spacingType : 'u-padding-vertical' }}{{ (block.spacingAmount) ? block.spacingAmount : '' }}">
-                        {# {% include '_blocks/' ~ block.type %} #}Hello world!
+                        {% if entry['debug'] is defined and entry['debug']|length %}
+                            <span>Content</span>
+                        {% elseif block.type != 'baseBlock' %}
+                            {% include '_blocks/' ~ block.type %}
+                        {% endif %}
                     </block>
                 {% endif %}
 

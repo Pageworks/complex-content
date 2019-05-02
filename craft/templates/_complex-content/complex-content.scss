@@ -22,15 +22,15 @@ complex-content{
             &.-column-count-3{
                 grid-template-columns: 1fr 1fr 1fr;
             }
-        }
 
-        column{
-            width: 100%;
-            display: inline-flex;
-            flex-flow: column wrap;
-
-            block{
+            column{
                 width: 100%;
+                display: inline-flex;
+                flex-flow: column wrap;
+    
+                block{
+                    width: 100%;
+                }
             }
         }
     }
