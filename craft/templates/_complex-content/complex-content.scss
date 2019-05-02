@@ -1,3 +1,5 @@
+@import 'settings';
+
 complex-content{
     position: relative;
     display: block;
@@ -17,11 +19,23 @@ complex-content{
             }
 
             &.-column-count-2{
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
+
+                @media (min-width: $screen-medium){
+                    grid-template-columns: 1fr 1fr;
+                }
             }
 
             &.-column-count-3{
-                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: 1fr;
+
+                @media (min-width: $screen-medium){
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                @media (min-width: $screen-large){
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
             }
 
             column{

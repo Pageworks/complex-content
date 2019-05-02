@@ -32,7 +32,7 @@ function compileSASS(){
             {
                 file: file,
                 outputStyle: 'compressed',
-                includePaths: ['utils/styles/settings', 'utils/styles/tools']
+                includePaths: ['craft/utils/styles/settings', 'craft/utils/styles/tools']
             },
             function(error, result){
                 if (error) {

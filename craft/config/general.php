@@ -27,7 +27,7 @@ return [
         // (see https://docs.craftcms.com/v3/project-config.html)
         'useProjectConfigFile' => true,
 
-        'cssCacheBustTimestamp' => '20851914',
+        'cssCacheBustTimestamp' => '21874040',
     ],
 
     // Dev environment settings
