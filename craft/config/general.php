@@ -18,14 +18,14 @@ return [
         'omitScriptNameInUrls' => true,
 
         // Control Panel trigger word
-        'cpTrigger' => 'admin',
+        'cpTrigger' => 'webmaster',
 
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => getenv('SECURITY_KEY'),
 
         // Whether to save the project config out to config/project.yaml
         // (see https://docs.craftcms.com/v3/project-config.html)
-        'useProjectConfigFile' => false,
+        'useProjectConfigFile' => true,
     ],
 
     // Dev environment settings

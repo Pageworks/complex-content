@@ -1,0 +1,73 @@
+dateModified: 1556811373
+email:
+  fromEmail: web@page.works
+  fromName: 'Complex Content'
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  974c3b4e-6efb-487a-b851-e89f3e9d64e3:
+    name: Common
+fields:
+  65afe10b-462a-452c-a990-7be27239e8c2:
+    name: 'Complex Content'
+    handle: cc
+    instructions: ''
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: '1'
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_cc}}'
+      localizeBlocks: false
+    contentColumnType: string
+    fieldGroup: 974c3b4e-6efb-487a-b851-e89f3e9d64e3
+sections:
+  a56e8dd1-d1d9-4d95-a713-db1f0472e1ec:
+    name: 'Standard Pages'
+    handle: standardPages
+    type: structure
+    enableVersioning: true
+    propagateEntries: true
+    siteSettings:
+      4db2cdd1-a9dc-4c36-9a42-30df844c89c6:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: '{parent.uri}/{slug}'
+        template: _complex-content/index.html
+    structure:
+      uid: c19a382b-9a54-4336-843a-b9228e1045d8
+      maxLevels: null
+    entryTypes:
+      63935eda-9fc3-4308-b7b5-c608184b35fe:
+        name: 'Standard Pages'
+        handle: standardPages
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: null
+        sortOrder: 1
+siteGroups:
+  7dc09f37-68ac-4c00-b048-e1359f13022e:
+    name: 'Complex Content'
+sites:
+  4db2cdd1-a9dc-4c36-9a42-30df844c89c6:
+    baseUrl: $DEFAULT_SITE_URL
+    handle: default
+    hasUrls: true
+    language: en-US
+    name: 'Complex Content'
+    primary: true
+    siteGroup: 7dc09f37-68ac-4c00-b048-e1359f13022e
+    sortOrder: 1
+system:
+  edition: solo
+  name: 'Complex Content'
+  live: true
+  schemaVersion: 3.1.27
+  timeZone: America/Los_Angeles
+users:
+  requireEmailVerification: true
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoVolumeUid: null
+  photoSubpath: ''
