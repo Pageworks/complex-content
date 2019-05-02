@@ -1,11 +1,11 @@
-dateModified: 1556813642
+dateModified: 1556813958
 email:
   fromEmail: web@page.works
   fromName: 'Complex Content'
   transportType: craft\mail\transportadapters\Sendmail
 fieldGroups:
-  974c3b4e-6efb-487a-b851-e89f3e9d64e3:
-    name: Common
+  6a78a026-88c2-4e5f-b48f-fec94ae5b6e1:
+    name: 'Complex Content'
 fields:
   65afe10b-462a-452c-a990-7be27239e8c2:
     name: 'Complex Content'
@@ -21,7 +21,19 @@ fields:
       contentTable: '{{%matrixcontent_cc}}'
       localizeBlocks: false
     contentColumnType: string
-    fieldGroup: 974c3b4e-6efb-487a-b851-e89f3e9d64e3
+    fieldGroup: 6a78a026-88c2-4e5f-b48f-fec94ae5b6e1
+  cefbf6e8-2f56-4a22-b11e-fee5f9dfb0ed:
+    name: Debug
+    handle: debug
+    instructions: 'When enabled Complex Content will be displayed in debug mode.'
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: ''
+    contentColumnType: boolean
+    fieldGroup: 6a78a026-88c2-4e5f-b48f-fec94ae5b6e1
 matrixBlockTypes:
   af180a29-4734-46fe-88f2-7e19da56b87b:
     field: 65afe10b-462a-452c-a990-7be27239e8c2
@@ -234,6 +246,13 @@ sections:
                 sortOrder: 1
                 fields:
                   65afe10b-462a-452c-a990-7be27239e8c2:
+                    required: false
+                    sortOrder: 1
+              -
+                name: Admin
+                sortOrder: 2
+                fields:
+                  cefbf6e8-2f56-4a22-b11e-fee5f9dfb0ed:
                     required: false
                     sortOrder: 1
 siteGroups:
