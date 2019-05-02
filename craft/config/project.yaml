@@ -1,4 +1,4 @@
-dateModified: 1556811373
+dateModified: 1556813642
 email:
   fromEmail: web@page.works
   fromName: 'Complex Content'
@@ -22,6 +22,186 @@ fields:
       localizeBlocks: false
     contentColumnType: string
     fieldGroup: 974c3b4e-6efb-487a-b851-e89f3e9d64e3
+matrixBlockTypes:
+  af180a29-4734-46fe-88f2-7e19da56b87b:
+    field: 65afe10b-462a-452c-a990-7be27239e8c2
+    name: Section
+    handle: sectionBlock
+    sortOrder: 1
+    fields:
+      628158c8-ef58-429f-80c1-21d7ca229778:
+        name: Background
+        handle: background
+        instructions: 'Please select a background for the section.'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          options:
+            -
+              label: White
+              value: '-white-background'
+              default: '1'
+            -
+              label: 'Off White'
+              value: '-snow-background'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      852667e4-6f33-4ad7-bbcf-8c20b45be02e:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              628158c8-ef58-429f-80c1-21d7ca229778:
+                required: false
+                sortOrder: 1
+  330758a1-2537-496a-ad37-2e4f0750a788:
+    field: 65afe10b-462a-452c-a990-7be27239e8c2
+    name: Container
+    handle: containerBlock
+    sortOrder: 2
+    fields:
+      3d5401c4-f400-4aca-a510-b4c1b4cf611a:
+        name: Width
+        handle: width
+        instructions: 'How wide should the container be?'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          options:
+            -
+              label: Narrow
+              value: '-narrow'
+              default: ''
+            -
+              label: Normal
+              value: ''
+              default: '1'
+            -
+              label: 'Full Screen'
+              value: '-full'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+      9670cd1b-4d09-4e2f-b9de-9b8964edeb4c:
+        name: 'Number of Columns'
+        handle: numberOfColumns
+        instructions: 'How many columns will this container have?'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Number
+        settings:
+          defaultValue: '1'
+          min: '1'
+          max: '3'
+          decimals: 0
+          size: null
+          prefix: ''
+          suffix: ''
+        contentColumnType: smallint(1)
+        fieldGroup: null
+    fieldLayouts:
+      8d1181c4-4aa3-4ddc-825f-af56413c2a1c:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              3d5401c4-f400-4aca-a510-b4c1b4cf611a:
+                required: false
+                sortOrder: 1
+              9670cd1b-4d09-4e2f-b9de-9b8964edeb4c:
+                required: true
+                sortOrder: 2
+  1f758883-2f59-4425-89ca-5830125c5db4:
+    field: 65afe10b-462a-452c-a990-7be27239e8c2
+    name: 'End Column'
+    handle: endColumnBlock
+    sortOrder: 3
+    fieldLayouts:
+      67f71814-8d3e-4170-a3b6-f32c6b178951:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+  96ab91b1-9ce2-4e21-8776-e75a6b49417a:
+    field: 65afe10b-462a-452c-a990-7be27239e8c2
+    name: 'Base Block'
+    handle: baseBlock
+    sortOrder: 4
+    fields:
+      299a0831-d560-4705-8e17-c5b94b51686c:
+        name: 'Spacing Type'
+        handle: spacingType
+        instructions: 'How should the spacing be applied?'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          options:
+            -
+              label: 'Top and Bottom'
+              value: u-padding-vertical
+              default: '1'
+            -
+              label: 'Only Top'
+              value: u-padding-top
+              default: ''
+            -
+              label: 'Only Bottom'
+              value: u-padding-bottom
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+      67db082c-479a-46eb-b343-3e31cab7db3f:
+        name: 'Spacing Amount'
+        handle: spacingAmount
+        instructions: 'What type of spacing should this container use?'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          options:
+            -
+              label: None
+              value: '-none'
+              default: ''
+            -
+              label: Normal
+              value: ''
+              default: '1'
+            -
+              label: x2
+              value: '-x2'
+              default: ''
+            -
+              label: x4
+              value: '-x4'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      95e06522-f877-4889-bcbb-6664ccd5cf41:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              299a0831-d560-4705-8e17-c5b94b51686c:
+                required: false
+                sortOrder: 1
+              67db082c-479a-46eb-b343-3e31cab7db3f:
+                required: false
+                sortOrder: 2
 sections:
   a56e8dd1-d1d9-4d95-a713-db1f0472e1ec:
     name: 'Standard Pages'
@@ -34,7 +214,7 @@ sections:
         enabledByDefault: true
         hasUrls: true
         uriFormat: '{parent.uri}/{slug}'
-        template: _complex-content/index.html
+        template: _complex-content/index
     structure:
       uid: c19a382b-9a54-4336-843a-b9228e1045d8
       maxLevels: null
@@ -44,8 +224,18 @@ sections:
         handle: standardPages
         hasTitleField: true
         titleLabel: Title
-        titleFormat: null
+        titleFormat: ''
         sortOrder: 1
+        fieldLayouts:
+          7df0ead5-28bc-41c8-979f-5d2eead83541:
+            tabs:
+              -
+                name: 'Content Builder'
+                sortOrder: 1
+                fields:
+                  65afe10b-462a-452c-a990-7be27239e8c2:
+                    required: false
+                    sortOrder: 1
 siteGroups:
   7dc09f37-68ac-4c00-b048-e1359f13022e:
     name: 'Complex Content'
