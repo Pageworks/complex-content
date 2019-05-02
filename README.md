@@ -1,6 +1,6 @@
 # Complex Content
 
-Complex Content is a structure that defines the layout and grouping of sections, containers, and blocks. You can see a visualization of how Complex Content is converted into a page by [clicking here](#).
+Complex Content is a structure that defines the layout and grouping of sections, containers, and blocks. [Click here](https://pageworks.github.io/complex-content/) to see a visualization of how Complex Content is structured. [Click here](#) to see how Complex Content can be used to build a page.
 
 # Structure
 

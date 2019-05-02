@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Complex Content - Example</title>
+    <title>Complex Content - Demo Page</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fafafa">
@@ -94,6 +94,10 @@
             position: relative;
             padding: 16px;
             border: 1px dashed rgb(248, 178, 72);
+        }
+
+        container:not(:last-of-type){
+            margin-bottom: 16px !important;
         }
 
         container.-two-column{
@@ -202,14 +206,16 @@
         }
 
         img{
-            max-width: 100%;
+            width: 100%;
+            object-fit: cover;
         }
 
         p:not(:last-of-type){
             margin-bottom: 16px;
         }
 
-        h2{
+        h2,
+        h1{
             text-align: center;
             width: 100%;
             text-transform: uppercase;
@@ -244,6 +250,9 @@
             height: 158px;
             margin: 0 8px;
             border: 1px dashed rgb(95, 224, 181);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
         }
 
         card-object::after{
@@ -259,6 +268,25 @@
             padding: 4px;
             letter-spacing: 0.5px;
         }
+
+        video-shim{
+            width: 100%;
+        }
+
+        video-shim::before{
+            content:"";
+            display: block;
+            width: 100%;
+            padding-top: 56.25%;
+        }
+
+        video-shim iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 
@@ -266,60 +294,44 @@
     <main>
         <complex-content>
             <section>
-                <container class="-two-column">
+                <container class="-max-width">
                     <column>
                         <block>
-                            <h2>Column 1 Heading</h2>
+                            <h1>Can a Dog Really be Man's Best Friend?</h1>
                         </block>
                         <block>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </block>
-                    </column>
-                    <column>
-                        <block>
-                            <h2>Column 2 Heading</h2>
-                        </block>
-                        <block>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                Wow very biscit yapper blep very hand that feed shibe woofer, long bois doge you are doin me a concern. Very good spot long bois borkdrive doggo heckin good boys and girls mlem the neighborhood pupper, doggo shoober borking doggo floofs. Mlem big ol pats maximum borkdrive shoober adorable doggo heckin good boys, shoober woofer you are doin me a concern tungg such treat. Long doggo heckin pupperino borkf, sub woofer. Corgo adorable doggo he made many woofs most angery pupper I have ever seen, wow such tempt very taste wow, vvv tungg.  Length boy ur givin me a spook length boy, heck. porgo aqua doggo. Snoot boof thicc heckin good boys and girls porgo such treat woofer boofers what a nice floof, borking doggo doggorino doggo doing me a frighten long bois borking doggo heckin good boys and girls.
                             </p>
                         </block>
                     </column>
                 </container>
-            </section>
-            <section>
-                <container class="-three-column">
-                    <column  class="-vertical-center">
+                <container class="-two-column -max-width">
+                    <column>
                         <block>
-                            <img src="https://images.unsplash.com/photo-1453227588063-bb302b62f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sad Doggo">
+                            <img src="https://images.unsplash.com/photo-1528631826578-759e1d0c1fbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Sleepy puppers">
                         </block>
                     </column>
                     <column>
                         <block>
-                            <h2>Column 2 Heading</h2>
+                            <h2>Sleepy Puppers</h2>
                         </block>
                         <block>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                Doggo ipsum big ol pupper boofers blep long doggo, heckin good boys. You are doin me a concern pats he made many woofs fluffer ruff, blep noodle horse. Ruff dat tungg tho blop maximum borkdrive boof, boofers long bois heckin. very hand that feed shibe what a nice floof very good spot. H*ck I am bekom fat lotsa pats aqua doggo heckin good boys stop it fren, mlem heckin angery woofer the neighborhood pupper very taste wow. You are doing me the shock fluffer shoober I am bekom fat many pats noodle horse very taste wow mlem, boof blep wow such tempt h*ck many pats. Shoober porgo long bois borkf big ol pupper long doggo, such treat you are doing me a frighten aqua doggo doggorino. Wrinkler you are doin me a concern shoober, blep.
+                            </p>
+                            <p>
+                                Borkdrive smol what a nice floof shooberino adorable doggo borking doggo fluffer waggy wags, blep long water shoob ur givin me a spook long bois shoober much ruin diet. Yapper heck boofers many pats doggorino borking doggo long woofer, smol borking doggo with a long snoot for pats long doggo long woofer long water shoob. pupperino floofs waggy wags. Noodle horse waggy wags mlem heck adorable doggo waggy wags, pupperino blep puggorino big ol pupper. Snoot wrinkler super chub extremely cuuuuuute, length boy boofers much ruin diet shoober, h*ck heckin good boys. Fat boi fluffer blep extremely cuuuuuute smol borking doggo with a long snoot for pats wow very biscit, shoober borkf long doggo. Very hand that feed shibe puggorino I am bekom fat blep length boy, boofers the neighborhood pupper vvv.
                             </p>
                         </block>
                     </column>
+                </container>
+                <container>
                     <column>
                         <block>
-                            <h2>Column 3 Heading</h2>
-                        </block>
-                        <block>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
+                            <video-shim>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/ah6fmNEtXFI?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            </video-shim>
                         </block>
                     </column>
                 </container>
@@ -329,18 +341,19 @@
                     <container class="-max-width">
                         <column>
                             <block>
-                                <h2>Column 1 Heading</h2>
-                            </block>
-                            <block>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
+                                <h2>View More Puppers</h2>
                             </block>
                             <block>
                                 <component>
-                                    <card-object></card-object>
-                                    <card-object></card-object>
-                                    <card-object></card-object>
+                                    <card-object>
+                                        Call to Action
+                                    </card-object>
+                                    <card-object>
+                                            Call to Action
+                                    </card-object>
+                                    <card-object>
+                                            Call to Action
+                                    </card-object>
                                 </component>
                             </block>
                         </column>
