@@ -2,6 +2,20 @@
 
 Complex Content is a structure that defines the layout and grouping of sections, containers, and blocks. [Click here](https://pageworks.github.io/complex-content/) to see a visualization of how Complex Content is structured. [Click here](https://pageworks.github.io/complex-content/page.html) to see how Complex Content can be used to structure a page.
 
+# Installation
+
+CD into the root directory of your Papertrain project within the terminal run the following command:
+
+```script
+chmod +x ./cc-installer.sh && ./cc-installer.sh
+```
+
+Then open the projects `config/project.yaml` file and append the following to each section:
+
+TODO: Add yaml for fields
+
+Once the `project.yaml` file is updated login into the websites control panel.
+
 # Structure
 
 A valid Complex Content structure requires at least 1 section and 1 container or 1 complex component, however, it could contain an unlimited number of sections that can contain an unlimited number of containers that can contain an unlimited number of blocks.
