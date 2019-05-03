@@ -6,12 +6,10 @@ then
 else
     mkdir ./templates/_complex-content && \
     mkdir ./templates/_blocks && \
-    mkdir ./templates/component-gallery && \
+    mkdir ./templates/_component-gallery && \
     mkdir ./cc-temp && \
-    cd ./cc-temp && \
-    curl -SL https://github.com/Pageworks/papertrain/archive/v0.1.1.zip | tar -xf - -C ./ && \
-    cd ../ && \
+    curl -SL https://github.com/Pageworks/papertrain/archive/v0.1.1.zip | tar -xf - -C ./cc-temp && \
     mv ./cc-temp/papertrain-0.1.1 ./modules && \
-    rmdir ./cc-temp && \
+    rm -rf ./cc-temp && \
     echo Complex Content has been installed.
 fi

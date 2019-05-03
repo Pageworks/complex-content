@@ -1,4 +1,4 @@
-dateModified: 1556888053
+dateModified: 1556892547
 email:
   fromEmail: web@page.works
   fromName: 'Complex Content'
@@ -33,6 +33,74 @@ fields:
     settings:
       default: ''
     contentColumnType: boolean
+    fieldGroup: 6a78a026-88c2-4e5f-b48f-fec94ae5b6e1
+  8564ecd0-a058-4ca3-8805-e7f69a284795:
+    name: Role
+    handle: role
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Dropdown
+    settings:
+      options:
+        -
+          label: 'Basic Block'
+          value: basicBlock
+          default: '1'
+        -
+          label: 'Media Block'
+          value: mediaBlock
+          default: ''
+        -
+          label: 'Interactive Block'
+          value: interactiveBlock
+          default: ''
+    contentColumnType: string
+    fieldGroup: 6a78a026-88c2-4e5f-b48f-fec94ae5b6e1
+  cdc11f7c-2275-4458-91be-2114fb55b171:
+    name: 'Component Thumbnail Image'
+    handle: componentThumbnailImage
+    instructions: ''
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:e5e4a1db-bf06-403b-8791-00d56debc356'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:e5e4a1db-bf06-403b-8791-00d56debc356'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources:
+        - 'volume:e5e4a1db-bf06-403b-8791-00d56debc356'
+      source: null
+      targetSiteId: null
+      viewMode: large
+      limit: '1'
+      selectionLabel: 'Add a Component Thumbnail Image'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 6a78a026-88c2-4e5f-b48f-fec94ae5b6e1
+  92b876ec-f562-41e5-8238-3dddfc74bc78:
+    name: 'Component Description'
+    handle: componentDescription
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '2'
+      charLimit: '256'
+      columnType: text
+    contentColumnType: text
     fieldGroup: 6a78a026-88c2-4e5f-b48f-fec94ae5b6e1
 matrixBlockTypes:
   af180a29-4734-46fe-88f2-7e19da56b87b:
@@ -263,6 +331,48 @@ sections:
                   cefbf6e8-2f56-4a22-b11e-fee5f9dfb0ed:
                     required: false
                     sortOrder: 1
+  66fbbd7e-3a51-46c8-8eaf-e9483abe872a:
+    name: 'Component Gallery'
+    handle: componentGallery
+    type: structure
+    enableVersioning: false
+    propagateEntries: true
+    siteSettings:
+      4db2cdd1-a9dc-4c36-9a42-30df844c89c6:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'component-gallery/{slug}'
+        template: component-gallery/entry
+    structure:
+      uid: 97bd4ab7-2887-4fbd-b72f-de0ac41e0a50
+      maxLevels: 1
+    entryTypes:
+      e20f1acb-91b5-45ff-96f2-e067836a3b11:
+        name: 'Component Gallery'
+        handle: componentGallery
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          4eb166bc-64b3-4606-829a-efd6b3944f79:
+            tabs:
+              -
+                name: Component
+                sortOrder: 1
+                fields:
+                  8564ecd0-a058-4ca3-8805-e7f69a284795:
+                    required: false
+                    sortOrder: 1
+                  cdc11f7c-2275-4458-91be-2114fb55b171:
+                    required: false
+                    sortOrder: 2
+                  92b876ec-f562-41e5-8238-3dddfc74bc78:
+                    required: true
+                    sortOrder: 3
+                  65afe10b-462a-452c-a990-7be27239e8c2:
+                    required: true
+                    sortOrder: 4
 siteGroups:
   7dc09f37-68ac-4c00-b048-e1359f13022e:
     name: 'Complex Content'
@@ -288,3 +398,13 @@ users:
   defaultGroup: null
   photoVolumeUid: null
   photoSubpath: ''
+volumes:
+  e5e4a1db-bf06-403b-8791-00d56debc356:
+    name: 'Component Gallery'
+    handle: componentGallery
+    type: craft\volumes\Local
+    hasUrls: true
+    url: '@web/uploads/component-gallery'
+    settings:
+      path: '@webroot/uploads/component-gallery'
+    sortOrder: 1

@@ -1,0 +1,217 @@
+{% if not currentUser['admin'] is defined %}
+    {% redirect 404 %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>Component Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            position: relative;
+            border: none;
+            outline: none;
+        }
+
+        body{
+            background-color: #f7f7f7;
+            color: rgba(41,41,41, 0.87);
+        }
+
+        body *{
+            display: inline-block;
+            line-height: 1.618;
+        }
+
+        main{
+            display: block;
+            margin: 64px auto;
+            width: 100vw;
+        }
+
+        gallery{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            width: 1264px;
+            max-width: 100vw;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        card{
+            min-height: 256px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(41,41,41,0.1);
+            user-select: none;
+            cursor: pointer;
+            background-color: #ffffff;
+            padding-bottom: 52px;
+        }
+
+        card-heading{
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 2rem;
+            text-transform: capitalize;
+            padding: 16px 16px 0;
+        }
+
+        card-type{
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            font-weigth: 500;
+            color: rgba(41,41,41,0.6);
+            padding: 0 16px 16px;
+        }
+
+        img-shim{
+            width: 100%;
+            background-color: #f4f4f4;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        img-shim::before{
+            content:"";
+            width: 100%;
+            display: block;
+            padding-top: 56.25%;
+        }
+
+        img-shim img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        img-shim svg{
+            position: absolute;
+            width: 48px;
+            heigth: 48px;
+            color: rgba(41,41,41,0.15);
+        }
+
+        card-description{
+            display: block;
+            padding: 16px;
+            padding-bottom: 8px;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            font-weigth: 400;
+            color: rgba(41,41,41,0.6);
+        }
+
+        card-actions{
+            display: flex;
+            padding: 8px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        a.-card{
+            display: inline-flex;
+            flex-flow: column wrap;
+            width: 100%;
+            text-decoration: none;
+            color: inherit;
+            background-color: #ffffff;
+            transition: all 150ms ease;
+            height: 100%;
+        }
+
+        a.-card:hover{
+            background-color: #fcfcfc;
+        }
+
+        a.-card:active{
+            background-color: #f7f7f7;
+        }
+
+        a.-button{
+            border-radius: 4px;
+            line-height: 36px;
+            display: inline-block;
+            height: 36px;
+            padding: 0 8px;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: rgba(59, 131, 249,0.87);
+            letter-spacing: 1px;
+            background-color: rgba(59, 131, 249,0);
+            transition: all 150ms ease;
+        }
+
+        a.-button:hover{
+            background-color: rgba(59, 131, 249,0.07);
+        }
+
+        @media (min-width: 860px){
+            gallery{
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1264px){
+            gallery{
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        {% set components = craft.entries({
+            section: 'componentGallery',
+            with: [
+                'componentThumbnailImage'
+            ]
+        }).all() %}
+        <gallery>
+            {% for component in components %}
+                <card>
+                    <a class="-card" href="{{ component.url }}">
+                        <card-heading>{{ component.title }}</card-heading>
+                        <card-type>{{ component.role.label }}</card-type>
+                        <img-shim>
+                            {% if component.componentThumbnailImage|length %}
+                                <img src="{{ component.singleImage1[0] }}">
+                            {% else %}
+                                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="image" class="svg-inline--fa fa-image fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 336H54a6 6 0 0 1-6-6V118a6 6 0 0 1 6-6h404a6 6 0 0 1 6 6v276a6 6 0 0 1-6 6zM128 152c-22.091 0-40 17.909-40 40s17.909 40 40 40 40-17.909 40-40-17.909-40-40-40zM96 352h320v-80l-87.515-87.515c-4.686-4.686-12.284-4.686-16.971 0L192 304l-39.515-39.515c-4.686-4.686-12.284-4.686-16.971 0L96 304v48z"></path></svg>
+                            {% endif %}
+                        </img-shim>
+                        <card-description>
+                            {{ component.componentDescription }}
+                        </card-description>
+                    </a>
+                    <card-actions>
+                        <a class="-button" href="{{ component.url }}">Demo</a>
+                    </card-actions>
+                </card>
+            {% endfor %}
+        </gallery>
+    </main>
+</body>
+</html>
+
