@@ -1,4 +1,4 @@
-dateModified: 1556813958
+dateModified: 1556888053
 email:
   fromEmail: web@page.works
   fromName: 'Complex Content'
@@ -188,9 +188,9 @@ matrixBlockTypes:
               value: '-none'
               default: ''
             -
-              label: Normal
+              label: x1
               value: ''
-              default: '1'
+              default: ''
             -
               label: x2
               value: '-x2'
@@ -198,6 +198,14 @@ matrixBlockTypes:
             -
               label: x4
               value: '-x4'
+              default: ''
+            -
+              label: x6
+              value: '-x6'
+              default: '1'
+            -
+              label: x8
+              value: '-x8'
               default: ''
         contentColumnType: string
         fieldGroup: null
