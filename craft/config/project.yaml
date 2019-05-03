@@ -1,4 +1,4 @@
-dateModified: 1556892547
+dateModified: 1556910508
 email:
   fromEmail: web@page.works
   fromName: 'Complex Content'
@@ -101,6 +101,26 @@ fields:
       charLimit: '256'
       columnType: text
     contentColumnType: text
+    fieldGroup: 6a78a026-88c2-4e5f-b48f-fec94ae5b6e1
+  43a3325d-6430-4091-b697-33742994a7be:
+    name: 'Demo Container Size'
+    handle: demoContainerSize
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Dropdown
+    settings:
+      options:
+        -
+          label: 'Standard Container'
+          value: container
+          default: ''
+        -
+          label: 'Fullscreen Container'
+          value: fullscreen-container
+          default: ''
+    contentColumnType: string
     fieldGroup: 6a78a026-88c2-4e5f-b48f-fec94ae5b6e1
 matrixBlockTypes:
   af180a29-4734-46fe-88f2-7e19da56b87b:
@@ -370,9 +390,12 @@ sections:
                   92b876ec-f562-41e5-8238-3dddfc74bc78:
                     required: true
                     sortOrder: 3
+                  43a3325d-6430-4091-b697-33742994a7be:
+                    required: false
+                    sortOrder: 4
                   65afe10b-462a-452c-a990-7be27239e8c2:
                     required: true
-                    sortOrder: 4
+                    sortOrder: 5
 siteGroups:
   7dc09f37-68ac-4c00-b048-e1359f13022e:
     name: 'Complex Content'
