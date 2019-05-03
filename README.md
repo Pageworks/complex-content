@@ -4,7 +4,7 @@ Complex Content is a structure that defines the layout and grouping of sections,
 
 # Installation
 
-CD into the root directory of your Papertrain project within the terminal run the following command:
+CD into the root directory of your Papertrain project and run the following command in the terminal:
 
 ```script
 chmod +x ./cc-installer.sh && ./cc-installer.sh
@@ -14,7 +14,7 @@ Then open the projects `config/project.yaml` file and append the following to ea
 
 TODO: Add yaml for fields
 
-Once the `project.yaml` file is updated login into the websites control panel.
+Once the `project.yaml` file is updated login into the websites control panel and allow craft to resync.
 
 # Structure
 
