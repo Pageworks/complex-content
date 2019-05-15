@@ -1,6 +1,6 @@
-{% do view.registerCssFile(siteUrl|trim('/') ~ '/assets/styles/complex-content.' ~ craft.app.config.general.cssCacheBustTimestamp ~ '.css') %}
+{% do view.registerCssFile(alias('@rootUrl')|trim('/') ~ '/assets/styles/complex-content.' ~ craft.app.config.general.cssCacheBustTimestamp ~ '.css') %}
 {% if entry['debug']|length and currentUser['admin'] is defined %}
-    {% do view.registerCssFile(siteUrl|trim('/') ~ '/assets/styles/cc-debug.' ~ craft.app.config.general.cssCacheBustTimestamp ~ '.css') %}
+    {% do view.registerCssFile(alias('@rootUrl')|trim('/') ~ '/assets/styles/cc-debug.' ~ craft.app.config.general.cssCacheBustTimestamp ~ '.css') %}
 {% endif %}
 
 {% set sectionOpen = false %}

@@ -2,24 +2,41 @@
     {% redirect 404 %}
 {% endif %}
 
-{% extends "_layouts/base.twig" %}
+<!doctype html>
+<html lang="en-US" class="has-no-js is-not-pointer-device is-not-touch-device dom-is-loading">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>{{ entry.title }} - Component Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% do view.registerCssFile(siteUrl|trim('/') ~ '/assets/styles/component-gallery.' ~ craft.app.config.general.cssCacheBustTimestamp ~ '.css') %}
+    {% include "_layouts/global-styles.twig" %}
 
-{% block content %}
-    <article id="component-gallery">
-        <section>
-            <h1>{{ entry.title }}</h1>
-            <h2>{{ entry.role.label }}</h2>
-            <p>{{ entry.componentDescription }}</p>
-        </section>
-        <section>
-            {% set block = entry.cc.one %}
-            <showcase>
-                <block data-block-type="{{ block.type }}" data-block-id="{{ block.id }}">
-                    {% include '_blocks/' ~ block.type %}
-                </block>
-            </showcase>
-        </section>
-    </article>
-{% endblock %}
+    {% do view.registerCssFile(alias('@rootUrl')|trim('/') ~ '/assets/styles/component-gallery.' ~ craft.app.config.general.cssCacheBustTimestamp ~ '.css') %}
+
+    <script>
+        modules = {};
+    </script>
+</head>
+<body>
+    {% spaceless %}
+        
+        {% include "_layouts/global-scripts.twig" %}
+
+        <a id="return" href="{{ alias('@rootUrl')|trim('/') }}/component-gallery">
+            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="long-arrow-left" class="svg-inline--fa fa-long-arrow-left fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M152.485 396.284l19.626-19.626c4.753-4.753 4.675-12.484-.173-17.14L91.22 282H436c6.627 0 12-5.373 12-12v-28c0-6.627-5.373-12-12-12H91.22l80.717-77.518c4.849-4.656 4.927-12.387.173-17.14l-19.626-19.626c-4.686-4.686-12.284-4.686-16.971 0L3.716 247.515c-4.686 4.686-4.686 12.284 0 16.971l131.799 131.799c4.686 4.685 12.284 4.685 16.97-.001z"></path></svg>
+            <span>Return to Gallery</span>
+        </a>
+        <article id="component-gallery">
+            <section>
+                <h1>{{ entry.title }}</h1>
+                <h2>{{ entry.role.label }}</h2>
+                <p>{{ entry.componentDescription }}</p>
+            </section>
+        </article>
+        {% include "_complex-content/complex-content.twig" %}
+        {% do view.registerJsFile( alias('@rootUrl')|trim('/') ~ '/assets/scripts/application.' ~ craft.app.config.general.jsCacheBustTimestamp ~ '.js') %}
+    {% endspaceless %}
+</body>
+</html>
+
