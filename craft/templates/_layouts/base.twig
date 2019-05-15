@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+
+    <style>
+        *{
+            -webkit-tap-highlight-color: transparent;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            font-size: 16px;
+            border: none;
+            outline: none;
+        }
+
+        body{
+            background-color: #ffffff;
+            color: rgba(41,41,41, 0.87);
+        }
+
+        body *{
+            display: inline-block;
+            line-height: 1.618;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        main{
+            display: block;
+            width: 100vw;
+        }
+
+        .g-container{
+            width: 1200px;
+            max-width: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .u-padding-vertical{
+            padding: 16px 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

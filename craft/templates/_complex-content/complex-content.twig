@@ -1,0 +1,94 @@
+{% do view.registerCssFile(alias('@rootUrl')|trim('/') ~ '/assets/styles/complex-content.' ~ craft.app.config.general.cssCacheBustTimestamp ~ '.css') %}
+{% if entry['debug']|length and currentUser['admin'] is defined %}
+    {% do view.registerCssFile(alias('@rootUrl')|trim('/') ~ '/assets/styles/cc-debug.' ~ craft.app.config.general.cssCacheBustTimestamp ~ '.css') %}
+{% endif %}
+
+{% set sectionOpen = false %}
+{% set containerOpen = false %}
+{% set columnOpen = false %}
+
+<complex-content data-entry="{{ entry.cpEditUrl }}" data-template="complex-content">
+
+    {% for block in entry.cc.all %}
+        {# Determine if we need to grab a utility block or a content block #}
+        {% if block.type == "sectionBlock" or block.type == "containerBlock" or block.type == "endColumnBlock" %}
+            {% switch block.type %}
+                {% case "sectionBlock" %}
+                    {# If we already have an open section check if we need to close anything #}
+                    {% if sectionOpen %}
+                        {% if columnOpen %}
+                            </column>
+                            {% set columnOpen = false %}
+                        {% endif %}
+                        {% if containerOpen %}
+                                </column>
+                            </container>
+                            {% set containerOpen = false %}
+                        {% endif %}
+                        </section>
+                    {% endif %}
+                    {% set sectionOpen = true %}
+                {% case "containerBlock" %}
+                    {# If we already have a container open close it #}
+                    {% if containerOpen %}
+                        {% if columnOpen %}
+                            </column>
+                            {% set columnOpen = false %}
+                        {% endif %}
+                            </column>
+                        </container>
+                    {% endif %}
+                    {% set containerOpen = true %}
+                {% case "endColumnBlock" %}
+                    </column>
+                    {% set columnOpen = false %}
+            {% endswitch %}
+
+            {# Generic utility blocks #}
+            {% if block.type != 'endColumnBlock' %}
+                {% include '_complex-content/structure/' ~ block.type %}
+            {% endif %}
+        {% else %}
+
+            {# Open a new section if we don't have one #}
+            {% if not sectionOpen %}
+                {% include '_complex-content/structure/sectionBlock' %}
+                {% set sectionOpen = true %}
+            {% endif %}
+
+            {# Open a new section if we don't have one #}
+            {% if not containerOpen %}
+                {% include '_complex-content/structure/containerBlock' %}
+                {% set containerOpen = true %}
+            {% endif %}
+            
+            {# Open a new column if we don't have one #}
+            {% if not columnOpen %}
+                {% set columnOpen = true %}
+                <column>
+            {% endif %}
+
+            <block data-block-type="{{ block.type }}" data-block-id="{{ block.id }}" class="{{ (block.spacingType) ? block.spacingType : 'u-padding-vertical' }}{{ (block.spacingAmount) ? block.spacingAmount : '' }}">
+                {% if entry['debug']|length and currentUser['admin'] is defined %}
+                    <span>Content</span>
+                {% elseif block.type != 'baseBlock' %}
+                    {% include '_blocks/' ~ block.type %}
+                {% endif %}
+            </block>
+        {% endif %}
+
+        {# When we run out of blocks close any open elements #}
+        {% if loop.last %}
+            {% if columnOpen %}
+                </column>
+            {% endif %}
+            {% if containerOpen %}
+                </container>
+            {% endif %}
+            {% if sectionOpen %}
+                </section>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+</complex-content>

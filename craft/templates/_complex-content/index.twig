@@ -1,0 +1,7 @@
+{% extends "_layouts/base.twig" %}
+
+{% cache using key entry.slug ~ (craft['imager'] is defined and craft.imager.clientSupportsWebp() and craft.imager.serverSupportsWebp() ? '-with-webp')  %}
+    {% block content %}
+        {% include "_complex-content/complex-content.twig" %}
+    {% endblock %}
+{% endcache %}
